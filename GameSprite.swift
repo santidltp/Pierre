@@ -6,4 +6,10 @@
 //  Copyright © 2018 Santiago De La Torre. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
+
+protocol GameSprite {
+    var textureAtlas:SKTextureAtlas { get set }
+    func spawn (parentNode: SKNode, position: CGPoint, size: CGSize)
+    func onTap()
+}
