@@ -1,6 +1,6 @@
 //
 //  GameViewController.swift
-//  Penguin
+//  Penguinn
 //
 //  Created by Santiago De La Torre on 6/16/18.
 //  Copyright © 2018 Santiago De La Torre. All rights reserved.
