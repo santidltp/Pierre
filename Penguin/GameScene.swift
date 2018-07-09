@@ -19,31 +19,14 @@ class GameScene: SKScene {
         // Note: UIColor uses a scale from o to 1 for its colors
         self.backgroundColor = UIColor(red: 0.4, green: 0.6, blue:0.95, alpha: 1.0)
         
-        // create our bee sprite node
-        let bee = SKSpriteNode()
-        // size our bee node
-        bee.size = CGSize(width: 28, height: 24)
-        // position our bee node
-        bee.position = CGPoint(x: 250, y: 250)
-        // attach our bee to the scene's node tree
-        self.addChild(bee)
-        
-        // Find our new bee texture atlas
-        
-        let beeFrames: [SKTexture] = [
-            SKTexture(imageNamed: "bee.png"),
-            SKTexture(imageNamed: "bee_fly.png")]
-        let flyAction = SKAction.animate(with: beeFrames, timePerFrame: 0.14)
-        let forever = SKAction.repeatForever(flyAction)
-        bee.run(forever)
-        let pathLeft = SKAction.moveBy(x: -200, y: -10, duration: 2)
-        let pathRight = SKAction.moveBy(x: 200, y: 10, duration: 2)
-        
-        let flipTextureNegtive = SKAction.scaleX(to: -1, duration: 0)
-        let flipTexturePositive = SKAction.scaleX(to: 1, duration: 0)
-        let flightBothofTheBees = SKAction.sequence([pathLeft,flipTextureNegtive,pathRight, flipTexturePositive])
-        let neverEnding = SKAction.repeatForever(flightBothofTheBees)
-        bee.run(neverEnding)
+
+        // Spawn our test bees:
+        let bee2 = Bee()
+        bee2.position = CGPoint(x: 325, y: 325)
+        self.addChild(bee2)
+        let bee3 = Bee()
+        bee3.position = CGPoint(x: 200, y: 325)
+        self.addChild(bee3)
     }
     
     
